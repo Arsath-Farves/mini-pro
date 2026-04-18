@@ -62,8 +62,12 @@ const Dashboard = () => {
 
             <main className="dashboard-main">
                 <header className="dashboard-header">
-                    <h1>Student Dashboard</h1>
-                    <p className="subtitle">Connect with alumni and boost your career</p>
+                    <h1>{user.role} Dashboard</h1>
+                    <p className="subtitle">
+                        {user.role === 'Student' 
+                            ? "Connect with alumni and boost your career" 
+                            : "Pay it forward and mentor the next generation"}
+                    </p>
                     {user.verifiedSkills && user.verifiedSkills.length > 0 && (
                         <div className="verified-skills-header">
                             <span className="skills-label">Reputation:</span>

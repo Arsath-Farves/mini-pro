@@ -26,7 +26,11 @@ const Sandbox = ({ user }) => {
         <div className="sandbox-container">
             <div className="sandbox-header">
                 <h2>Collaborative Sandbox</h2>
-                <p>Work on real projects mentored by verified Alumni</p>
+                <p>
+                    {user.role === 'Student' 
+                        ? "Work on real projects mentored by verified Alumni" 
+                        : "Offer real projects and mentor students"}
+                </p>
             </div>
 
             {user.role === 'Alumni' && (

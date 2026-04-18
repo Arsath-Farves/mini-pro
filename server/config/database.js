@@ -8,7 +8,7 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 const connectDB = async () => {
     try {
         console.log(`📡 Attempting to connect to: ${process.env.MONGO_URI || 'No URI provided'}`);
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(process.env.MONGO_URI, { serverSelectionTimeoutMS: 2000 });
         console.log(`✅ MongoDB connected: ${mongoose.connection.host}`);
     } catch (error) {
         console.warn(`⚠️ Local MongoDB connection failed: ${error.message}`);
